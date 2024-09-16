@@ -14,7 +14,7 @@ void printTable(char table[3][3])
     printf("\n");
 }
 
-// This function return 2 or 0 randomically. Used by bot to select a corner to mark
+// Returns 0 or 2 randomically. Used by bot to select a corner to mark
 int sortCorner();
 
 int main()
@@ -66,13 +66,6 @@ int main()
 
 int sortCorner()
 {
-    int sortedValue;
-
-    do 
-    {
-        sortedValue = rand() % 3; 
-
-    } while (sortedValue != 0 & sortedValue != 2);
-
-    return sortedValue;
+    if (rand() %2) return 0;
+    else return 2;
 }
